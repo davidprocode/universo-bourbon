@@ -1,13 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 
-import StackLayout from './src/Layout/Stack.js';
-
-export default function App() {
+export default function About() {
   return (
-    <NavigationContainer>
-      <StackLayout/>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <Text>Hello from About!!!</Text>
+    </View>
   );
 }
 
