@@ -3,6 +3,8 @@ import * as React from 'react';
 import { Video, ResizeMode } from 'expo-av';
 import BackgroundVideo from '../../../assets/background.mp4'
 
+import AnimatedView from '../../components/AnimatedView'
+
 export default function Home({navigation}) {
   const video = React.useRef(null);
 
@@ -17,13 +19,15 @@ export default function Home({navigation}) {
         volume={0}
         resizeMode={ResizeMode.COVER}
       />
-      <Text style={styles.title}>Seja bem vindo ao Universo Bourbon!</Text>      
+      <Text style={styles.title}>Seja bem vindo ao Universo Bourbon!</Text>
+      <AnimatedView>
       <TouchableOpacity 
       style={styles.button}
       onPress={() =>navigation.navigate('About', {name: 'Jane'})}
       >
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
+      </AnimatedView>      
     </View>
   )
 }
