@@ -5,11 +5,11 @@ import BackgroundVideo from '../../../assets/background.mp4'
 
 export default function Home({navigation}) {
   const video = React.useRef(null);
-  video.current.playAsync()
 
   return (
     <View style={styles.container}>      
       <Video
+        onLoad={() => {video.current.playAsync()}}
         ref={video}
         style={styles.backgroundVideo}
         source={BackgroundVideo}
@@ -22,7 +22,7 @@ export default function Home({navigation}) {
       style={styles.button}
       onPress={() =>navigation.navigate('About', {name: 'Jane'})}
       >
-        <Text style={styles.text}>Entrar</Text>
+        <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
     </View>
   )
@@ -36,20 +36,40 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button:{
-    height:50,
-    width:'80%',
+    height: 50,
+    width: 140,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#0859c6',
     padding: 10,
+    margin: 10,
+    fontSize:'15px',
+    fontfamily:'Arial',
+    backgroundColor: "rgba(74,144,226,1)",
+    borderWidth: 4,
+    borderColor: "rgba(255,255,255,1)",
+    borderStyle: "solid",
+    borderRadius: 100,
+    shadowColor: "rgba(0,0,0,1)",
+    elevation: 3,
+    shadowOpacity: 1,
+    shadowRadius: 1,
+    width: 170,
+    height: 70,
+  },
+  buttonText:{
+    color: '#fff',
+    fontSize: 25
   },
   title:{
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign:'center',
     width:'80%',
     color: '#fff',
     fontSize: 50,
     title: 'center',
+    padding: 14,
   },
   backgroundVideo: {
     position: 'absolute',
