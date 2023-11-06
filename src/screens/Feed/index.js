@@ -8,7 +8,12 @@ export default function Feed() {
     return (
       <View
         style={[
-          { flex: 1 },
+          { 
+            flex: 1,
+            height: Dimensions.get('window').height,
+            width: '100%',
+          
+          },
           index % 2 == 0
             ? { backgroundColor: "blue" }
             : { backgroundColor: "pink" },

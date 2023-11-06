@@ -14,7 +14,7 @@ export default function StackLayout() {
         component={Home}
         options={{ title: "Inicio", headerShown: false }}
       />
-      <Stack.Screen name="Feed" component={Feed} options={{ title: "Feed" }} />
+      <Stack.Screen name="Feed" component={Feed}  options={{ title: "Feed" , headerShown: false }} />
     </Stack.Navigator>
   );
 }

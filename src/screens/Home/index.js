@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
     width: "80%",
     color: "#fff",
     fontSize: 50,
-    title: "center",
     padding: 14,
   },
   backgroundVideo: {
