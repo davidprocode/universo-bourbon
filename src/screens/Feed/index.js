@@ -1,8 +1,5 @@
 import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native";
-import { SafeAreaFrameContext } from "react-native-safe-area-context";
-import { Video, ResizeMode } from 'expo-av';
-import { useRef, useState } from 'react';
-
+import FeedItem from "./FeedItem";
 
 export default function Feed() {
   const data = [
@@ -26,54 +23,16 @@ export default function Feed() {
     },
   ];
 
-  const renderItem = ({ item, index }) => {
-    const video = useRef(null);
-    const [status, setStatus] = useState({});
-
-    return (
-      <View
-        style={[
-          { 
-            flex: 1,
-            height: Dimensions.get('window').height,
-            width: '100%',
-          
-          },
-          index % 2 == 0
-            ? { backgroundColor: "blue" }
-            : { backgroundColor: "pink" },
-        ]}
-      >
-        <Text style={{color:"#fff", fontWeight: "bold"}}>{item.title}</Text>
-        <Text style={{color:"#fff", }}>{item.Description}</Text>
-        <Video
-        ref={video}
-        source={{
-          uri: item.url,
-        }}
-        useNativeControls
-        resizeMode={ResizeMode.CONTAIN}
-        isLooping
-        onPlaybackStatusUpdate={status => setStatus(() => status)}
-      />
-      </View>
-    );
-  };
-
   return (
-    <View style={styles.container}>
+    <View>
       <FlatList
         key={data.id}
         data={data}
-        renderItem={renderItem}
+        renderItem={FeedItem}
         pagingEnabled
-        keyExtractor={(item) => item}
         decelerationRate={"fast"}
       />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {},
-});
