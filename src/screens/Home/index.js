@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, useRef } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import * as React from "react";
 import { Video, ResizeMode } from "expo-av";
 import BackgroundVideo from "../../../assets/background.mp4";
