@@ -8,13 +8,17 @@ const Stack = createNativeStackNavigator();
 
 export default function StackLayout() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Feed">
       <Stack.Screen
         name="Home"
         component={Home}
         options={{ title: "Inicio", headerShown: false }}
       />
-      <Stack.Screen name="Feed" component={Feed}  options={{ title: "Feed" , headerShown: false }} />
+      <Stack.Screen
+        name="Feed"
+        component={Feed}
+        options={{ title: "Feed", headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
