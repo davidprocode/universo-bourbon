@@ -1,6 +1,7 @@
-import { Dimensions, FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 import FeedItem from "./FeedItem";
+import shuffle from "../../utils/shuffle";
 
 export default function Feed() {
   const DATA = [
@@ -27,7 +28,7 @@ export default function Feed() {
   return (
     <View style={styles.container}>
       <FlatList
-        data={DATA}
+        data={shuffle(DATA)}
         renderItem={({ item }) => <FeedItem item={item} />}
         keyExtractor={(item) => item.id}
         pagingEnabled
