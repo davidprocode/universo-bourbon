@@ -1,17 +1,10 @@
-import {
-  FlatList,
-  Pressable,
-  StyleSheet,
-  View,
-  Text,
-  SafeAreaView,
-} from "react-native";
+import { FlatList, Pressable, StyleSheet, View, Text } from "react-native";
 
 import FeedItem from "./FeedItem";
 import shuffle from "../../utils/shuffle";
-import ModalMenu from "../../components/ModalMenu";
+import ModalMenuButton from "../../components/ModalMenuButton";
 
-export default function Feed() {
+export default function Feed({ navigation }) {
   const DATA = [
     {
       id: 1,
@@ -42,9 +35,7 @@ export default function Feed() {
         pagingEnabled
         decelerationRate={"fast"}
       />
-      <Pressable style={[styles.button, styles.buttonOpen]}>
-        <Text style={styles.textStyle}>MENU</Text>
-      </Pressable>
+      <ModalMenuButton navigation={navigation} />
     </View>
   );
 }
@@ -52,13 +43,5 @@ export default function Feed() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  button: {
-    position: "absolute",
-    alignSelf: "center",
-    backgroundColor: "#fff",
-    bottom: 15,
-    borderRadius: 20,
-    padding: 10,
   },
 });

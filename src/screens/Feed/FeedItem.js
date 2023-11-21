@@ -1,8 +1,9 @@
 import { ResizeMode, Video } from "expo-av";
 import { useRef } from "react";
 import { Dimensions, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import ModalMenuButton from "../../components/ModalMenuButton";
 
-export default function FeedItem({ item }) {
+export default function FeedItem({ item, navigation }) {
   const videoFeedRef = useRef(null);
   const handlePlayVideo = () => {
     videoFeedRef.current.playAsync();
@@ -38,7 +39,8 @@ const styles = StyleSheet.create({
   },
   info: {
     flex: 1,
-    padding: 50,
+    width: "100%",
+    padding: 30,
     position: "absolute",
     bottom: 50,
     zIndex: 99,
