@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackLayout() {
   return (
-    <Stack.Navigator initialRouteName="Feed">
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
         name="Home"
         component={Home}

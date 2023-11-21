@@ -22,15 +22,16 @@ export default function ModalMenuButton({ navigation }) {
         <View style={styles.list}>
           <TouchableOpacity
             style={styles.item}
-            onPress={() => navigation.navigate("Feed")}
-          >
-            <Text style={styles.modalText}>Feed</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.item}
             onPress={() => navigation.navigate("Home")}
           >
             <Text style={styles.modalText}>Home</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.item}
+            onPress={() => navigation.navigate("Feed")}
+          >
+            <Text style={styles.modalText}>Feed</Text>
           </TouchableOpacity>
         </View>
         <Pressable
@@ -62,10 +63,17 @@ const styles = StyleSheet.create({
     bottom: 20,
     zIndex: 99,
   },
+  modalText: {
+    fontSize: 18,
+  },
   list: {
     alignItems: "center",
-    margin: 50,
+    margin: 40,
+  },
+  item: {
+    width: "100%",
+    margin: 10,
+    padding: 20,
     backgroundColor: "#00e6f6",
   },
-  item: {},
 });
