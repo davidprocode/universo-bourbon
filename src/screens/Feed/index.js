@@ -1,7 +1,8 @@
-import { FlatList, Pressable, StyleSheet, View, Text } from "react-native";
-
-import FeedItem from "./FeedItem";
+import * as React from "react";
+import { FlatList, StyleSheet, View } from "react-native";
 import shuffle from "../../utils/shuffle";
+import FeedItem from "./FeedItem";
+
 import ModalMenuButton from "../../components/ModalMenuButton";
 
 export default function Feed({ navigation }) {

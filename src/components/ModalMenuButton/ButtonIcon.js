@@ -1,6 +1,5 @@
-import { Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export function ButtonText() {
+export function ButtonIcon() {
   return <Ionicons name="menu" size={26} color="#fff" />;
 }

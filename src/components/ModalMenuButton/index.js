@@ -1,13 +1,7 @@
 import { useState } from "react";
-import {
-  Pressable,
-  Text,
-  StyleSheet,
-  View,
-  Modal,
-  TouchableOpacity,
-} from "react-native";
-import { ButtonText } from "./ButtonText";
+import { Pressable, StyleSheet, View, Modal } from "react-native";
+import { ButtonIcon } from "./ButtonIcon";
+import { Button } from "react-native-paper";
 
 export default function ModalMenuButton({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -20,33 +14,25 @@ export default function ModalMenuButton({ navigation }) {
         style={[styles.button]}
       >
         <View style={styles.list}>
-          <TouchableOpacity
+          <Button
+            icon="information"
+            mode="contained"
             style={styles.item}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("About")}
           >
-            <Text style={styles.modalText}>Home</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.item}
-            onPress={() => navigation.navigate("Feed")}
-          >
-            <Text style={styles.modalText}>Feed</Text>
-          </TouchableOpacity>
+            About
+          </Button>
         </View>
         <Pressable
           style={[styles.button]}
           onPress={() => setModalVisible(!modalVisible)}
         >
-          <ButtonText />
+          <ButtonIcon />
         </Pressable>
       </Modal>
 
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <ButtonText />
+      <Pressable style={[styles.button]} onPress={() => setModalVisible(true)}>
+        <ButtonIcon />
       </Pressable>
     </View>
   );
@@ -68,12 +54,12 @@ const styles = StyleSheet.create({
   },
   list: {
     alignItems: "center",
-    margin: 40,
+    margin: 10,
   },
   item: {
-    width: "100%",
-    margin: 10,
     padding: 20,
-    backgroundColor: "#00e6f6",
+    margin: 10,
+    fontSize: 40,
+    width: "80%",
   },
 });
