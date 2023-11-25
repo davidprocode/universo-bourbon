@@ -3,8 +3,6 @@ import { FlatList, StyleSheet, View } from "react-native";
 import shuffle from "../../utils/shuffle";
 import FeedItem from "./FeedItem";
 
-import ModalMenuButton from "../../components/ModalMenuButton";
-
 export default function Feed({ navigation }) {
   const DATA = [
     {
@@ -28,7 +26,7 @@ export default function Feed({ navigation }) {
   ];
 
   return (
-    <View style={styles.container}>
+    <View>
       <FlatList
         data={shuffle(DATA)}
         renderItem={({ item }) => <FeedItem item={item} />}
@@ -36,13 +34,6 @@ export default function Feed({ navigation }) {
         pagingEnabled
         decelerationRate={"fast"}
       />
-      <ModalMenuButton navigation={navigation} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

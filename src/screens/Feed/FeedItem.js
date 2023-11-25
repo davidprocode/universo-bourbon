@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     padding: 30,
     position: "absolute",
     bottom: 50,
-    zIndex: 99,
   },
   title: {
     fontSize: 20,
