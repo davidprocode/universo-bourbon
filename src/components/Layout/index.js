@@ -29,11 +29,12 @@ export default function Layout() {
               </TouchableOpacity>
             </SafeAreaView>
           </View>
-
-          <ButtonMenu />
-          <ButtonMenu />
-          <ButtonMenu />
-          <ButtonMenu />
+          <View style={styles.wrapMenu}>
+            <ButtonMenu />
+            <ButtonMenu />
+            <ButtonMenu />
+            <ButtonMenu />
+          </View>
         </View>
       )}
 
@@ -67,5 +68,10 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
     height: "100%",
     width: "100%",
+  },
+  wrapMenu: {
+    flex: 1,
+    flexWrap: "wrap",
+    alignContent: "flex-start",
   },
 });
