@@ -5,17 +5,22 @@ const MenuItems = [
   {
     title: "Videos",
     icon: "film-outline",
-    redirectTo: "Feed",
+    redirectTo: "Videos",
   },
   {
-    title: "Informações",
-    icon: "information-circle-outline",
-    redirectTo: "About",
+    title: "Cursos",
+    icon: "today-outline",
+    redirectTo: "Cursos",
   },
   {
-    title: "Localização",
+    title: "Unidades",
     icon: "navigate-circle-outline",
-    redirectTo: "About",
+    redirectTo: "Unidades",
+  },
+  {
+    title: "Vagas",
+    icon: "megaphone-outline",
+    redirectTo: "Vagas",
   },
 ];
 

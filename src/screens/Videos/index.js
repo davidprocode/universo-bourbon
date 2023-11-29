@@ -3,7 +3,7 @@ import { FlatList, View } from "react-native";
 import shuffle from "../../utils/shuffle";
 import FeedItem from "./FeedItem";
 
-export default function Feed({ navigation }) {
+export default function Videos({ navigation }) {
   const DATA = [
     {
       id: 1,

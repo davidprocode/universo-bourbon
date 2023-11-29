@@ -1,9 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "../screens/Home";
-import Feed from "../screens/Feed";
 import Menu from "../screens/Menu";
-import About from "../screens/About";
+import Videos from "../screens/Videos";
+import Vagas from "../screens/Vagas";
+import Cursos from "../screens/Cursos";
+import Unidades from "../screens/Unidades";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,14 +26,24 @@ export default function StackLayout({ navigator }) {
         options={{ title: "Inicio", headerShown: false }}
       />
       <Stack.Screen
-        name="Feed"
-        component={Feed}
-        options={{ title: "Feed", headerShown: false }}
+        name="Videos"
+        component={Videos}
+        options={{ title: "Videos", headerShown: false }}
       />
       <Stack.Screen
-        name="About"
-        component={About}
-        options={{ title: "About", headerShown: true }}
+        name="Vagas"
+        component={Vagas}
+        options={{ title: "Vagas", headerShown: true }}
+      />
+      <Stack.Screen
+        name="Cursos"
+        component={Cursos}
+        options={{ title: "Cursos", headerShown: true }}
+      />
+      <Stack.Screen
+        name="Unidades"
+        component={Unidades}
+        options={{ title: "Unidades", headerShown: true }}
       />
     </Stack.Navigator>
   );
