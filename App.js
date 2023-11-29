@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 
-import Layout from "./src/components/Layout/index.js";
+import Layout from "./src/Layout/Stack.js";
 
 export default function App() {
   return (

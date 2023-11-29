@@ -1,5 +1,5 @@
 import * as React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, View } from "react-native";
 import shuffle from "../../utils/shuffle";
 import FeedItem from "./FeedItem";
 

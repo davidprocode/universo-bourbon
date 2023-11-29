@@ -1,9 +1,8 @@
 import { ResizeMode, Video } from "expo-av";
 import { useRef } from "react";
-import { Dimensions, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import ModalMenuButton from "../../components/ModalMenuButton";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 
-export default function FeedItem({ item, navigation }) {
+export default function FeedItem({ item }) {
   const videoFeedRef = useRef(null);
   const handlePlayVideo = () => {
     videoFeedRef.current.playAsync();
