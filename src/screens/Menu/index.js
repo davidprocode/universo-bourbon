@@ -33,9 +33,7 @@ export default function Menu({ navigation }) {
         renderItem={({ item }) => (
           <ButtonMenu item={item} navigation={navigation} />
         )}
-        keyExtractor={(item) => {
-          item.index;
-        }}
+        keyExtractor={(item) => item.index}
       />
     </View>
   );

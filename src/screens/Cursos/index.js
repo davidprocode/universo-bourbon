@@ -1,9 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import ButtonCurso from "../../components/ButtonCurso";
+
+import CursosList from './CursosList.json';
 
 export default function Cursos({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Pagina em construção...</Text>
+      <View>
+        <FlatList
+        numColumns={2}
+        data={CursosList}
+        renderItem={({ item }) => (
+          <ButtonCurso item={item} navigation={navigation} />
+        )}
+        />
+      </View>
+
     </View>
   );
 }
@@ -11,8 +24,6 @@ export default function Cursos({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     backgroundColor: "#ff0",
   },
 });
