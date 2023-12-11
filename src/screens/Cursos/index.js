@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import ButtonCurso from "../../components/ButtonCurso";
 
-import CursosList from './CursosList.json';
+import CursosList from "./CursosList.json";
 
 export default function Cursos({ navigation }) {
   return (
@@ -9,14 +9,14 @@ export default function Cursos({ navigation }) {
       <Text>Pagina em construção...</Text>
       <View>
         <FlatList
-        numColumns={2}
-        data={CursosList}
-        renderItem={({ item }) => (
-          <ButtonCurso item={item} navigation={navigation} />
-        )}
+          numColumns={2}
+          data={CursosList}
+          keyExtractor={(item) => item.key}
+          renderItem={({ item }) => (
+            <ButtonCurso key={item.key} item={item} navigation={navigation} />
+          )}
         />
       </View>
-
     </View>
   );
 }

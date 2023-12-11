@@ -1,17 +1,38 @@
 [
   {
+    "key": 1,
     "title": "Introdução a informatica",
     "image": "film-outline",
     "Descrição": "O Curso de Introdução á Informática foi desenvolvido para atender os alunos que não tiveram contato com o computador. Funções do mouse, teclado e orientações gerais são trabalhadas de uma maneira de fácil compreensão e leitura."
   },
   {
+    "key": 2,
+    "title": "Windows 11",
+    "image": "film-outline",
+    "Descrição": "O Windows é um dos sistemas operacionais mais utilizados no mundo. O Windows 11 vem com diversas novidades. Conhecimento sobre suas diversas funções é praticamente um requisito para aqueles que querem aprender a utilizar computadores e entrar no mercado de trabalho."
+  },
+  {
+    "key": 3,
+    "title": "Microsoft Word 2019",
+    "image": "film-outline",
+    "Descrição": "O Word é a versão mais recente do processador de texto da Microsoft, disponibilizaremos um curso especial para que você domine todas as técnicas, ferramentas e funções do Editor de Textos mais utilizado em todo o mundo."
+  },
+  {
+    "key": 4,
     "title": "Microsoft Excel 2019",
     "image": "film-outline",
     "Descrição": "Com este curso você irá aprender a usufruir deste fantástico programa, otimizando planilhas, fazendo cálculos e integrando-os com recursos especiais como gráficos, tabelas e centenas de outras funções que vão facilitar a sua vida, desde controles pessoais até atividades relacionadas às mais diversas profissões que o usam diariamente."
   },
   {
-    "title": "Microsoft Word 2019",
+    "key": 5,
+    "title": "Excel 2019 Avançado",
     "image": "film-outline",
-    "Descrição": "O Word é a versão mais recente do processador de texto da Microsoft, disponibilizaremos um curso especial para que você domine todas as técnicas, ferramentas e funções do Editor de Textos mais utilizado em todo o mundo."
+    "Descrição": "Um curso especialmente desenvolvido para aqueles que desejam aprimorar o seu conhecimento sobre a planilha eletrônica mais utilizada em todo o mundo."
+  },
+  {
+    "key": 6,
+    "title": "Excel 2019 Dashboard",
+    "image": "film-outline",
+    "Descrição": "Dashboard é uma representação visual das informações mais importantes para atingir um ou mais objetivos, que tem sido consolidado em uma única tela de computador para ser monitorado de forma ágil."
   }
 ]

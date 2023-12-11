@@ -3,24 +3,34 @@ import ButtonMenu from "../../components/ButtonMenu";
 
 const MenuItems = [
   {
+    key: 1,
     title: "Videos",
     icon: "film-outline",
     redirectTo: "Videos",
   },
   {
+    key: 2,
     title: "Cursos",
     icon: "today-outline",
     redirectTo: "Cursos",
   },
   {
+    key: 3,
     title: "Unidades",
     icon: "navigate-circle-outline",
     redirectTo: "Unidades",
   },
   {
+    key: 4,
     title: "Vagas",
     icon: "megaphone-outline",
     redirectTo: "Vagas",
+  },
+  {
+    key: 5,
+    title: "Camera Ao vivo",
+    icon: "camera-outline",
+    redirectTo: "Camera",
   },
 ];
 
@@ -31,9 +41,8 @@ export default function Menu({ navigation }) {
         numColumns={2}
         data={MenuItems}
         renderItem={({ item }) => (
-          <ButtonMenu item={item} navigation={navigation} />
+          <ButtonMenu key={item.key} item={item} navigation={navigation} />
         )}
-        keyExtractor={(item) => item.index}
       />
     </View>
   );

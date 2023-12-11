@@ -5,6 +5,7 @@ import Menu from "../screens/Menu";
 import Videos from "../screens/Videos";
 import Vagas from "../screens/Vagas";
 import Cursos from "../screens/Cursos";
+import Camera from "../screens/Camera";
 import Unidades from "../screens/Unidades";
 
 const Stack = createNativeStackNavigator();
@@ -44,6 +45,11 @@ export default function StackLayout({ navigator }) {
         name="Unidades"
         component={Unidades}
         options={{ title: "Unidades", headerShown: true }}
+      />
+      <Stack.Screen
+        name="Camera"
+        component={Camera}
+        options={{ title: "Camera Ao vivo", headerShown: true }}
       />
     </Stack.Navigator>
   );
