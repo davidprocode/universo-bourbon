@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import ButtonUnidades from "../../components/ButtonUnidades";
 
 export default function Unidades({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Pagina em construção...</Text>
+      <ButtonUnidades />
+      <ButtonUnidades />
     </View>
   );
 }
@@ -13,6 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#ff0",
+    backgroundColor: "#00f",
   },
 });
