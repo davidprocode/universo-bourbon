@@ -4,8 +4,8 @@ import ButtonUnidades from "../../components/ButtonUnidades";
 export default function Unidades({ navigation }) {
   return (
     <View style={styles.container}>
-      <ButtonUnidades />
-      <ButtonUnidades />
+      <ButtonUnidades title="Berimbal" />
+      <ButtonUnidades title="Paripe" />
     </View>
   );
 }
