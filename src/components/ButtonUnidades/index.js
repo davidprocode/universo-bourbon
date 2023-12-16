@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  title: { color: "#fff" },
-  subTitle: { color: "#fff" },
+  title: { color: "#fff", fontSize: "25px" },
+  subTitle: { color: "#fff", fontSize: "25px", fontWeight: "bold" },
 });
