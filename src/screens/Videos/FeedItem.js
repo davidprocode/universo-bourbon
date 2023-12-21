@@ -1,22 +1,34 @@
 import { ResizeMode, Video } from "expo-av";
-import { useRef } from "react";
+import { useState, useCallback, useRef } from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
+import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function FeedItem({ item }) {
-  const videoFeedRef = useRef(null);
-  const handlePlayVideo = () => {
-    videoFeedRef.current.playAsync();
-  };
+  const youtubePlayerRef = useRef();
+  const [playing, setPlaying] = useState(true);
+
+  const togglePlaying = useCallback(() => {
+    setPlaying((prev) => !prev);
+  }, []);
+
+  // const videoFeedRef = useRef(null);
+  // const handlePlayVideo = () => {
+  //   videoFeedRef.current.playAsync();
 
   return (
     <View style={styles.container}>
-      <Video
-        onLoad={handlePlayVideo}
-        ref={videoFeedRef}
-        source={{ uri: item.url }}
-        resizeMode={ResizeMode.COVER}
-        isLooping={true}
-        style={styles.video}
+      <YoutubePlayer
+        height={Dimensions.get("window").height}
+        play={playing}
+        videoId={item.videoID}
+        ref={youtubePlayerRef}
+        forceAndroidAutoplay
+        allowWebViewZoom={false}
+        onChangeState={(event) => {
+          if (event === "ended" && visible) {
+            youtubePlayerRef?.current?.seekTo(0, true);
+          }
+        }}
       />
       <View style={styles.info}>
         <Text style={[styles.text, styles.title]}>{item.title}</Text>
