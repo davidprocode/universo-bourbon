@@ -20,9 +20,17 @@ const buildIFrame = (videoId) => `
               videoId: "${videoId}",
               playerVars: {
                 'playsinline': 1,
+                'iv_load_policy': 0,
+                'cc_load_policy': 0,
                 'modestbranding': 1,
+                'disablekb': 1,
+                'loop': 1,
                 'controls': 0,
                 'rel': 0,
+                'autoplay':1,
+                'color': '#f00',
+                'fs': 0,
+                'end': 0,
               },
             });
             MessageInvoker.postMessage('YouTube has loaded');
@@ -51,22 +59,19 @@ export const buildHTML = (videoId) => `
         <head>
           ${iFrameStyle}
           <meta name="viewport" content="initial-scale=1">
-          <title>Navigation Delegate Example</title>
         </head>
         <body>${buildIFrame(videoId)}</body>
       </html>
       `;
 
-const YoutubePlayer = () => {
+const YoutubePlayer = ({ videoId }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.videoContainer}>
-        <WebView
-          source={{ html: buildHTML("qZ3KLnp_3VM") }}
-          allowsFullscreenVideo={false}
-          allowsInlineMediaPlayback
-        />
-      </View>
+    <View style={styles.videoContainer}>
+      <WebView
+        source={{ html: buildHTML(videoId) }}
+        allowsFullscreenVideo={false}
+        allowsInlineMediaPlayback
+      />
     </View>
   );
 };
