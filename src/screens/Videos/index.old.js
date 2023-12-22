@@ -19,10 +19,12 @@ export default function Videos({ navigation }) {
   ];
   return (
     <View>
-      <YoutubePlayer
-        source={
-          "https://www.youtube-nocookie.com/embed/videoseries?si=Caxhd73qcbMUCncp&amp;list=PLavkPspItpTVI_XZVnViWSjqTxMA8eGpM"
-        }
+      <FlatList
+        data={DATA}
+        renderItem={({ item }) => <YoutubePlayer videoId={item.id} />}
+        keyExtractor={(item) => item.id}
+        scrollEnabled
+        pagingEnabled
       />
     </View>
   );

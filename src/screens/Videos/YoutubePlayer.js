@@ -5,38 +5,6 @@ import WebView from "react-native-webview";
 
 const { width, height } = Dimensions.get("window");
 
-const buildIFrame = (videoId) => `
-        <div id="player"></div>
-        <script>
-          var tag = document.createElement('script');
-          tag.src = "https://www.youtube.com/iframe_api";
-          var firstScriptTag = document.getElementsByTagName('script')[0];
-          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-          var player;
-          function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-              height: '100%',
-              width: ${width},
-              videoId: "${videoId}",
-              playerVars: {
-                'playsinline': 1,
-                'iv_load_policy': 0,
-                'cc_load_policy': 0,
-                'modestbranding': 1,
-                'disablekb': 1,
-                'loop': 1,
-                'controls': 0,
-                'rel': 0,
-                'autoplay':1,
-                'color': '#f00',
-                'fs': 0,
-                'end': 0,
-              },
-            });
-            MessageInvoker.postMessage('YouTube has loaded');
-          }
-        </script>
-        `;
 const iFrameStyle = `
         <style>
           html {
@@ -53,26 +21,28 @@ const iFrameStyle = `
           }
         </style>
       `;
-export const buildHTML = (videoId) => `
+export const buildHTML = (source) => `
       <!DOCTYPE html>
       <html>
         <head>
           ${iFrameStyle}
           <meta name="viewport" content="initial-scale=1">
         </head>
-        <body>${buildIFrame(videoId)}</body>
+        <body><iframe width="${width}" height="${height}" src="${source}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></body>
       </html>
       `;
 
-const YoutubePlayer = ({ videoId }) => {
+const YoutubePlayer = ({ source }) => {
   return (
-    <View style={styles.videoContainer}>
-      <WebView
-        source={{ html: buildHTML(videoId) }}
-        allowsFullscreenVideo={false}
-        allowsInlineMediaPlayback
-      />
-    </View>
+    <SafeAreaView>
+      <View style={styles.videoContainer}>
+        <WebView
+          source={{ html: buildHTML(source) }}
+          allowsFullscreenVideo={false}
+          allowsInlineMediaPlayback
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -82,11 +52,6 @@ const styles = StyleSheet.create({
   },
   videoContainer: {
     height: height,
-  },
-  buttonContainer: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-around",
   },
 });
 
