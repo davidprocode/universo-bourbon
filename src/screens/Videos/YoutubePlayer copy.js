@@ -18,7 +18,7 @@ const buildIFrame = (videoId) => `
               title: 'Universo Bourbon',
               height: '100%',
               width: ${width},
-              videoId: "${videoId}",
+              videoId: " ",
               playerVars: { 
                 'autoplay': 1,
                 'controls': 0,

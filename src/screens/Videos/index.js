@@ -1,28 +1,55 @@
 import * as React from "react";
-import { FlatList, View } from "react-native";
-import YoutubePlayer from "./YoutubePlayer";
+import { Dimensions, FlatList, View } from "react-native";
+import Player from "./Player";
+import WebView from "react-native-webview";
+
+export const buildHTML = () => `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta name="viewport" content="initial-scale=1">
+        </head>
+        <body>
+        <script src="https://geo.dailymotion.com/player.js" data-playlist="x79dlo"></script>
+        </body>
+      </html>
+      `;
 
 export default function Videos({ navigation }) {
   const DATA = [
     {
-      id: "U08w6opWr9A",
+      id: "1",
       title: "First Item",
+      url: "https://www.dailymotion.com/video/x78z1ql",
     },
     {
-      id: "iatrdwnb79U",
+      id: "2",
       title: "Second Item",
+      url: "https://www.dailymotion.com/video/x78z1ql",
     },
     {
-      id: "qZ3KLnp_3VM",
+      id: "3",
       title: "Third Item",
+      url: "https://www.dailymotion.com/video/x78z1ql",
     },
   ];
   return (
-    <View>
-      <YoutubePlayer
-        source={
-          "https://www.youtube-nocookie.com/embed/videoseries?si=Caxhd73qcbMUCncp&amp;list=PLavkPspItpTVI_XZVnViWSjqTxMA8eGpM"
-        }
+    <View
+      style={{
+        flex: 1,
+        width: Dimensions.get("screen").height,
+        width: Dimensions.get("screen").width,
+        backgroundColor: "red",
+      }}
+    >
+      <WebView
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+        source={{
+          html: buildHTML(),
+        }}
       />
     </View>
   );
