@@ -2,15 +2,19 @@ import * as React from "react";
 import { Dimensions, FlatList, View } from "react-native";
 import Player from "./Player";
 import WebView from "react-native-webview";
+import { Video, ResizeMode } from "expo-av";
+import YoutubePlayer from "./YoutubePlayer";
 
-export const buildHTML = () => `
+export const iframeString = `<iframe frameborder="0" type="text/html" src="https://geo.dailymotion.com/player.html?video=x84sh87&mute=true"></iframe>`;
+
+export const buildHTML = (iframeString, bodyStyles) => `
       <!DOCTYPE html>
       <html>
         <head>
           <meta name="viewport" content="initial-scale=1">
         </head>
-        <body>
-        <script src="https://geo.dailymotion.com/player.js" data-playlist="x79dlo"></script>
+        <body style=${bodyStyles}>
+        ${iframeString}
         </body>
       </html>
       `;
@@ -39,17 +43,11 @@ export default function Videos({ navigation }) {
         flex: 1,
         width: Dimensions.get("screen").height,
         width: Dimensions.get("screen").width,
-        backgroundColor: "red",
+        backgroundColor: "blue",
       }}
     >
-      <WebView
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-        source={{
-          html: buildHTML(),
-        }}
+      <YoutubePlayer
+        source={"PLhVh83pUx3yD0H7LBx_mz0IaM1Qv79uDm&si=F1W9b5QKMbf4PWyl"}
       />
     </View>
   );
