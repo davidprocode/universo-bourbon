@@ -7,7 +7,7 @@ export default function Cursos({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Pagina em construção...</Text>
-      <View>
+      {/* <View>
         <FlatList
           numColumns={2}
           data={CursosList}
@@ -16,7 +16,7 @@ export default function Cursos({ navigation }) {
             <ButtonCurso key={item.key} item={item} navigation={navigation} />
           )}
         />
-      </View>
+      </View> */}
     </View>
   );
 }
@@ -24,6 +24,8 @@ export default function Cursos({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#ff0",
   },
 });

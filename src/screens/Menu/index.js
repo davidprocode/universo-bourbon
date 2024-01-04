@@ -1,5 +1,6 @@
-import { FlatList, StyleSheet, View } from "react-native";
-import ButtonMenu from "../../components/ButtonMenu";
+import { FlatList, View } from "react-native";
+import ButtonSquare from "../../components/ButtonSquare";
+import AppStylesheet from "../../components/AppStylesheet";
 
 const MenuItems = [
   {
@@ -32,24 +33,24 @@ const MenuItems = [
     icon: "camera-outline",
     redirectTo: "Camera",
   },
+  {
+    key: 6,
+    title: "Template",
+    icon: "camera-outline",
+    redirectTo: "Template",
+  },
 ];
 
 export default function Menu({ navigation }) {
   return (
-    <View style={styles.container}>
+    <View style={AppStylesheet.Container}>
       <FlatList
         numColumns={2}
         data={MenuItems}
         renderItem={({ item }) => (
-          <ButtonMenu key={item.key} item={item} navigation={navigation} />
+          <ButtonSquare key={item.key} item={item} navigation={navigation} />
         )}
       />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
