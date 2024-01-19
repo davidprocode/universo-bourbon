@@ -1,11 +1,5 @@
-import { NavigationContainer } from "@react-navigation/native";
-
-import Layout from "./src/Layout/Stack.js";
+import LandPage from "./src/pages/landpage.js";
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Layout />
-    </NavigationContainer>
-  );
+  return <LandPage />;
 }

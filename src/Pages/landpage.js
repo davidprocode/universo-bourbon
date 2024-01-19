@@ -1,10 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import ButtonUnidades from "../../components/ButtonUnidades";
 
-export default function Unidades({ navigation }) {
+export default function LandPage() {
   return (
     <View style={styles.container}>
-      <ButtonUnidades title="Berimbal" />
+      <Text style={styles.text}>Venha conhecer nosso universo!</Text>
     </View>
   );
 }
@@ -15,5 +14,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#00f",
+  },
+  text: {
+    alignSelf: "center",
+    fontSize: 64,
+    fontStyle: "italic",
+    color: "#fff",
   },
 });

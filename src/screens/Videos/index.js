@@ -2,7 +2,6 @@ import * as React from "react";
 import { FlatList, View } from "react-native";
 import AppStylesheet from "../../components/AppStylesheet";
 import VideoPlayer from "../../components/VideoPlayer";
-import path from "path";
 
 export default function Videos({ navigation }) {
   const DATA = [
